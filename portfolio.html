@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--
+  PRAVEEN KUMAR S — PORTFOLIO
+  EDIT: contact details in <script>. WORK links: replace the 4 placeholder
+  Netlify URLs once each site has its OWN deploy (search "[EDIT] live URL").
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Praveen Kumar S — Websites for local businesses</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B1110'/><g fill='none' stroke='%235BE3A6' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M13 11l-5 5 5 5M19 11l5 5-5 5'/></g></svg>">
+<meta name="description" content="Praveen Kumar S — ex-Zoho engineer building fast websites that bring local businesses more customers. See live work and get a free sample." />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0B1110;--surface:#13201C;--surface2:#19271F;--text:#EEF4F0;--muted:#90A89E;
+    --accent:#5BE3A6;--accent2:#7CC4FF;--line:rgba(255,255,255,.10);--radius:18px;--max:1100px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.disp{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative}
+  .eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  /* drifting background orbs */
+  .orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.45;z-index:-1;pointer-events:none}
+  .orb.a{width:460px;height:460px;background:#1f6b50;top:-160px;right:-120px;animation:drift 22s ease-in-out infinite}
+  .orb.b{width:380px;height:380px;background:#1c4a6b;bottom:-140px;left:-120px;animation:drift 26s ease-in-out infinite reverse}
+  @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-40px)}}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.96rem;padding:.85rem 1.5rem;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:transform .18s,background .18s,border-color .18s,box-shadow .18s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-wa{background:#1FAF54;color:#fff}.btn-wa:hover{background:#178f44;box-shadow:0 14px 30px -10px rgba(31,175,84,.6)}
+  .btn-accent{background:var(--accent);color:#06140D;font-weight:700}.btn-accent:hover{box-shadow:0 14px 34px -10px rgba(91,227,166,.55)}
+  .btn-ghost{border-color:var(--line);color:var(--text)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,17,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.12rem;display:flex;align-items:center;gap:.6rem}
+  .brand .mk{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#37c489);color:#06140D;display:grid;place-items:center;font-weight:700}
+  .nav-r{display:flex;align-items:center;gap:1.5rem;font-size:.92rem}
+  .nav-r a.lnk{color:var(--muted)}.nav-r a.lnk:hover{color:var(--text)}
+  @media(max-width:760px){.nav-r .lnk{display:none}.brand .full{display:none}}
+  /* hero */
+  .hero{padding:60px 0 60px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:.8rem;color:var(--muted);margin-bottom:18px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(91,227,166,.6);animation:ping 2s ease-in-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(91,227,166,.55)}70%{box-shadow:0 0 0 10px rgba(91,227,166,0)}100%{box-shadow:0 0 0 0 rgba(91,227,166,0)}}
+  .hero h1{font-size:clamp(2.5rem,5.6vw,4rem);max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:1.12rem;max-width:46ch;margin:20px 0 28px}
+  .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+  .stats{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}
+  .stat b{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;display:block;line-height:1;color:#fff}
+  .stat span{color:var(--muted);font-size:.82rem}
+  .hero-art svg{width:100%;height:auto;display:block;overflow:visible}
+  @media(max-width:760px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero-art{max-width:420px}}
+  /* anims */
+  @keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  @keyframes tw{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.12)}}
+  .fA{animation:floatA 5s ease-in-out infinite}.fB{animation:floatB 3.6s ease-in-out infinite}
+  .tw{transform-box:fill-box;transform-origin:center;animation:tw 2.2s ease-in-out infinite}
+  section{padding:66px 0}
+  .sec-h{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+  .sec-h h2{font-size:clamp(1.9rem,3.8vw,2.6rem)}.sec-h p{color:var(--muted);max-width:56ch}
+  /* work */
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .25s ease,border-color .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 26px 50px -28px rgba(91,227,166,.35)}
+  .chrome{display:flex;align-items:center;gap:6px;padding:10px 12px;background:var(--surface2);border-bottom:1px solid var(--line)}
+  .chrome i{width:9px;height:9px;border-radius:50%;background:#36473f;display:block}
+  .chrome .url{margin-left:8px;font-size:.68rem;color:var(--muted);background:#0b1110;padding:3px 9px;border-radius:6px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .preview{padding:24px 20px 28px;min-height:170px;display:flex;flex-direction:column;justify-content:center}
+  .preview .pn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.98rem;display:flex;align-items:center;gap:.5rem;margin-bottom:10px}
+  .preview .pmk{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-weight:700;font-size:.78rem;color:#fff}
+  .preview .ph{font-family:'Space Grotesk',sans-serif;font-size:1.24rem;line-height:1.13;font-weight:600}
+  .preview .pbtn{margin-top:14px;align-self:flex-start;font-size:.68rem;font-weight:700;color:#fff;padding:.42rem .8rem;border-radius:999px}
+  .card-foot{padding:15px 18px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:auto}
+  .card-foot .tag{font-size:.76rem;color:var(--muted)}
+  .card-foot a{font-size:.84rem;font-weight:600;color:var(--accent);display:inline-flex;gap:.35rem;align-items:center}
+  @media(max-width:880px){.work{grid-template-columns:1fr 1fr}}@media(max-width:560px){.work{grid-template-columns:1fr}}
+  /* why */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .wcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s,border-color .2s}
+  .wcard:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .wcard .ic{width:46px;height:46px;border-radius:12px;background:var(--surface2);color:var(--accent);display:grid;place-items:center;margin-bottom:14px}
+  .wcard h3{font-family:'Space Grotesk',sans-serif;font-size:1.12rem;font-weight:600;margin-bottom:8px}
+  .wcard p{color:var(--muted);font-size:.94rem}
+  @media(max-width:760px){.why{grid-template-columns:1fr}}
+  /* contact */
+  .contact{text-align:center;padding:90px 0;position:relative}
+  .contact h2{font-size:clamp(2rem,4.5vw,3.1rem);max-width:18ch;margin:14px auto 0}
+  .contact p{color:var(--muted);margin:18px auto 28px;max-width:46ch}
+  .contact .row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+  .cmeta{margin-top:22px;color:var(--muted);font-size:.9rem;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+  .cmeta a{color:var(--text)}.cmeta a:hover{color:var(--accent)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.86rem}
+  .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+  .foot a{color:var(--muted)}.foot a:hover{color:var(--text)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}.reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.fA,.fB,.tw,.orb,.badge .dot{animation:none}.btn:hover,.card:hover,.wcard:hover{transform:none}html{scroll-behavior:auto}}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="orb a"></div><div class="orb b"></div>
+
+<header><div class="wrap nav">
+  <a href="#top" class="brand"><span class="mk">PK</span><span class="full">Praveen Kumar S</span></a>
+  <div class="nav-r">
+    <a class="lnk" href="#work">Work</a><a class="lnk" href="#why">Why me</a>
+    <a class="lnk" href="https://www.linkedin.com/in/spksouns" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#" class="btn btn-wa" id="navWa">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>WhatsApp
+    </a>
+  </div>
+</div></header>
+
+<!-- HERO -->
+<section class="hero" id="top"><div class="wrap hero-grid">
+  <div class="reveal">
+    <span class="badge"><span class="dot"></span> Available for new projects</span>
+    <h1>Websites that bring local businesses <em>more customers.</em></h1>
+    <p>I'm Praveen — an ex-Zoho engineer. I build fast, clean websites that help local businesses get found on Google, take bookings, and get enquiries straight to WhatsApp.</p>
+    <div class="hero-cta">
+      <a href="#" class="btn btn-accent" id="heroWa">Message me on WhatsApp</a>
+      <a href="#work" class="btn btn-ghost">See my work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3+ yrs</b><span>engineer at Zoho</span></div>
+      <div class="stat"><b>Chennai</b><span>based · work remote</span></div>
+      <div class="stat"><b>Free</b><span>sample before you pay</span></div>
+    </div>
+  </div>
+  <div class="hero-art reveal">
+    <svg viewBox="0 0 460 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A website that grows a business">
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5BE3A6"/><stop offset="1" stop-color="#37c489"/></linearGradient></defs>
+      <ellipse cx="235" cy="350" rx="160" ry="20" fill="#000" opacity=".25"/>
+      <!-- browser window -->
+      <g class="fA">
+        <rect x="74" y="84" width="312" height="226" rx="16" fill="#13201C" stroke="rgba(255,255,255,.14)"/>
+        <path d="M74 100a16 16 0 0 1 16-16h280a16 16 0 0 1 16 16v18H74z" fill="#19271F"/>
+        <circle cx="96" cy="101" r="5" fill="#FF6B5E"/><circle cx="114" cy="101" r="5" fill="#FFC23C"/><circle cx="132" cy="101" r="5" fill="#5BE3A6"/>
+        <rect x="160" y="94" width="210" height="14" rx="7" fill="#0B1110"/>
+        <rect x="96" y="138" width="120" height="16" rx="8" fill="url(#g1)"/>
+        <rect x="96" y="166" width="200" height="9" rx="4.5" fill="rgba(255,255,255,.28)"/>
+        <rect x="96" y="184" width="168" height="9" rx="4.5" fill="rgba(255,255,255,.18)"/>
+        <rect x="96" y="210" width="96" height="28" rx="14" fill="url(#g1)"/>
+        <rect x="312" y="138" width="58" height="100" rx="10" fill="rgba(91,227,166,.16)"/>
+      </g>
+      <!-- WhatsApp bubble -->
+      <g class="fB" style="animation-delay:.5s">
+        <circle cx="62" cy="180" r="28" fill="#1FAF54"/>
+        <path transform="translate(46,164) scale(.66)" d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z" fill="#fff"/>
+      </g>
+      <!-- rating pill -->
+      <g class="fB" style="animation-delay:1.1s">
+        <rect x="288" y="52" width="126" height="38" rx="19" fill="#fff"/>
+        <g transform="translate(300,64)" fill="#F2A33D"><path d="M8 0l2 5 5 .3-4 3.2 1.4 5L8 10.8 3.6 13.5 5 8.5 1 5.3 6 5z"/></g>
+        <text x="328" y="76" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#13201C">4.9 ★★★★</text>
+      </g>
+      <!-- location pin -->
+      <g class="fA" style="animation-delay:.3s">
+        <path d="M400 250c0 16-18 28-18 28s-18-12-18-28a18 18 0 0 1 36 0z" fill="#7CC4FF"/>
+        <circle cx="382" cy="250" r="7" fill="#0B1110"/>
+      </g>
+      <!-- growth bar chart -->
+      <g class="fB" style="animation-delay:.8s">
+        <rect x="60" y="300" width="118" height="76" rx="12" fill="#13201C" stroke="rgba(255,255,255,.12)"/>
+        <rect x="74" y="348" width="14" height="18" rx="3" fill="#5BE3A6"/>
+        <rect x="96" y="338" width="14" height="28" rx="3" fill="#5BE3A6"/>
+        <rect x="118" y="324" width="14" height="42" rx="3" fill="#5BE3A6"/>
+        <rect x="140" y="312" width="14" height="54" rx="3" fill="#5BE3A6"/>
+        <path d="M74 344 L98 332 L120 320 L150 308" stroke="#7CC4FF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- sparkles -->
+      <path class="tw" style="animation-delay:.2s" d="M404 150l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#5BE3A6"/>
+      <path class="tw" style="animation-delay:1.3s" d="M250 40l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#7CC4FF"/>
+    </svg>
+  </div>
+</div></section>
+
+<!-- WORK -->
+<section id="work"><div class="wrap">
+  <div class="sec-h reveal"><span class="eyebrow">Selected work</span><h2>A few sites I've built.</h2>
+    <p>Different businesses, one goal — get found, look trustworthy, and turn visitors into customers. Tap any one to open it live.</p></div>
+  <div class="work">
+
+    <div class="card reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url">profound-pavlova-df77cf.netlify.app</div></div>
+      <div class="preview" style="background:linear-gradient(160deg,#E8F4EF,#CCE6DC)">
+        <div class="pn" style="color:#0A3F39"><span class="pmk" style="background:#0E5A53">A</span>Anitha Dental</div>
+        <div class="ph" style="color:#0E5A53">The dentist visit that doesn't feel scary.</div>
+        <span class="pbtn" style="background:#0E5A53">Book on WhatsApp</span>
+      </div>
+      <div class="card-foot"><span class="tag">Dental clinic</span>
+        <a href="https://profound-pavlova-df77cf.netlify.app/" target="_blank" rel="noopener">View live →</a></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url">smile-studio.netlify.app</div></div>
+      <div class="preview" style="background:linear-gradient(160deg,#FFF1EC,#FDE3D9)">
+        <div class="pn" style="color:#DB4E34"><span class="pmk" style="background:#F2664B">S</span>Smile Studio</div>
+        <div class="ph" style="color:#DB4E34">A dentist your whole family will like.</div>
+        <span class="pbtn" style="background:#F2664B">Book free consult</span>
+      </div>
+      <div class="card-foot"><span class="tag">Family dental</span>
+        <a href="https://benevolent-halva-0bf8b1.netlify.app/" target="_blank" rel="noopener">View live →</a></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url">iron-yard.netlify.app</div></div>
+      <div class="preview" style="background:linear-gradient(160deg,#15171A,#23272C)">
+        <div class="pn" style="color:#fff"><span class="pmk" style="background:#FF4D1C">I</span>Iron Yard</div>
+        <div class="ph" style="color:#fff">Train hard. <span style="color:#FF4D1C">Get results.</span></div>
+        <span class="pbtn" style="background:#FF4D1C">Claim free trial</span>
+      </div>
+      <div class="card-foot"><span class="tag">Gym &amp; fitness</span>
+        <a href="https://flourishing-hotteok-fc9215.netlify.app/" target="_blank" rel="noopener">View live →</a></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url">saffron-kitchen.netlify.app</div></div>
+      <div class="preview" style="background:linear-gradient(160deg,#FBEFD9,#F3D9AE)">
+        <div class="pn" style="color:#7A3B12"><span class="pmk" style="background:#C2410C">S</span>Saffron Kitchen</div>
+        <div class="ph" style="color:#9A3412">South Indian, made fresh every day.</div>
+        <span class="pbtn" style="background:#C2410C">Order on WhatsApp</span>
+      </div>
+      <div class="card-foot"><span class="tag">Restaurant</span>
+        <a href="https://earnest-kataifi-446642.netlify.app/" target="_blank" rel="noopener">View live →</a></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url">lumiere-salon.netlify.app</div></div>
+      <div class="preview" style="background:linear-gradient(160deg,#F7EDE7,#EFD7CF)">
+        <div class="pn" style="color:#7E4651"><span class="pmk" style="background:#9C5B66">L</span>Lumière</div>
+        <div class="ph" style="color:#9C5B66">Look beautiful. Feel renewed.</div>
+        <span class="pbtn" style="background:#9C5B66">Book appointment</span>
+      </div>
+      <div class="card-foot"><span class="tag">Salon &amp; spa</span>
+        <a href="https://funny-madeleine-d29e02.netlify.app/" target="_blank" rel="noopener">View live →</a></div>
+    </div>
+
+  </div>
+  <p style="color:var(--muted);font-size:.84rem;margin-top:18px">Note: deploy each site to its own Netlify URL, then the four placeholder links above get swapped for the real ones.</p>
+</div></section>
+
+<!-- WHY -->
+<section id="why"><div class="wrap">
+  <div class="sec-h reveal"><span class="eyebrow">Why work with me</span><h2>Not a template seller.</h2></div>
+  <div class="why">
+    <div class="wcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div><h3>I'm a real engineer</h3><p>Three years at Zoho building production systems. Your site is built properly and runs fast — and I can build solid backends too when you need more than a basic site.</p></div>
+    <div class="wcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></div><h3>I run a business too</h3><p>I help run my family's logistics business, so I get the owner's side — cashflow, deadlines, and results that matter, not just a pretty page.</p></div>
+    <div class="wcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div><h3>Built to get customers</h3><p>Google visibility, WhatsApp enquiries, click-to-call, online booking — every site is aimed at turning visitors into paying customers.</p></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact"><div class="wrap reveal">
+  <span class="eyebrow">Let's talk</span>
+  <h2>Want to see your business as a website?</h2>
+  <p>Tell me about your business on WhatsApp and I'll mock up a free sample — no obligation, no pressure.</p>
+  <div class="row">
+    <a href="#" class="btn btn-wa" id="contactWa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>Message me on WhatsApp
+    </a>
+    <a href="#" class="btn btn-ghost" id="emailBtn">Email me</a>
+  </div>
+  <div class="cmeta">
+    <span>📧 <a href="#" id="emailLink">praveen.spksouns@gmail.com</a></span>
+    <span>📱 <a href="#" id="phoneLink">+91 76049 38580</a></span>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot">
+  <span>© <span id="yr"></span> Praveen Kumar S · Chennai</span>
+  <span><a href="https://github.com/spksouns" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/spksouns" target="_blank" rel="noopener">LinkedIn</a> · <a href="#" id="footWa">WhatsApp</a></span>
+</div></footer>
+
+<script>
+  /* ===== [EDIT] your contact details ===== */
+  const WHATSAPP_NUMBER = "917604938580";
+  const EMAIL = "praveen.spksouns@gmail.com";
+  const PHONE = "+91 76049 38580";
+  /* ======================================= */
+  const waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" +
+    encodeURIComponent("Hi Praveen, I saw your portfolio and I'd like a website for my business.");
+  ["navWa","heroWa","contactWa","footWa"].forEach(id=>{const e=document.getElementById(id);if(e)e.href=waLink;});
+  const mail = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Website enquiry");
+  ["emailBtn","emailLink"].forEach(id=>{const e=document.getElementById(id);if(e)e.href=mail;});
+  document.getElementById("phoneLink").href = "tel:" + PHONE.replace(/\s/g,"");
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.1});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
